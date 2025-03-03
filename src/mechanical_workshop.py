@@ -1,5 +1,5 @@
 BIENVENIDA = """
-Bienvenido al taller de Don José.
+Bienvenido al taller de Don Jose.
 Este programa gestiona el inventario de carros.
 """
 
@@ -8,7 +8,7 @@ ACCIONES = """
 Acciones:
 1) Agregar carro
 2) Eliminar carro
-3) Operaciones avanzadas en el inventario
+3) Ordenar inventario
 4) Salir
 """
 
@@ -19,11 +19,11 @@ Ingresa el nombre del carro que deseas eliminar:"""
 ACTUALIZACION_EXITOSA = """
 Inventario actualizado:"""
 ENTRADA_INVALIDA = """
-Entrada inválida."""
+Entrada invalida."""
 DESPEDIDA = """
 Gracias por usar este programa.
 Este programa fue pythonizado por ChuyPeñaCP.
-Adiós."""
+Adios."""
 
 # Inventario inicial
 carros = ["nissan", "toyota", "honda", "volkswagen", "chevrolet", "ford"]
@@ -36,7 +36,7 @@ for carro in carros:
 
 while True:
     print(ACCIONES)
-    opc = input("Dime qué opción deseas realizar: ").strip()
+    opc = input("Dime que opcion deseas realizar: ").strip()
     
     if opc == "1":
         # Agregar carro
