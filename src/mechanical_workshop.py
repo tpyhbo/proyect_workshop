@@ -28,52 +28,59 @@ Adios."""
 # Inventario inicial
 carros = ["nissan", "toyota", "honda", "volkswagen", "chevrolet", "ford"]
 
-print(BIENVENIDA)
-print(INVENTARIO)
+# Función principal del programa
+def iniciar_taller():
+    print(BIENVENIDA)
+    print(INVENTARIO)
 
-for carro in carros:
-    print(carro.title())
+    for carro in carros:
+        print(carro.title())
 
-while True:
-    print(ACCIONES)
-    opc = input("Dime que opcion deseas realizar: ").strip()
-    
-    if opc == "1":
-        # Agregar carro
-        while True:
-            carro = input(INGRESA_CARRO_AGREGAR).strip().lower()
-            if carro != "":
-                carros.append(carro)
-                print(ACTUALIZACION_EXITOSA)
-                for carro in carros:
-                        print(carro.title())
-                break
-            else:
-                print(ENTRADA_INVALIDA)
-    elif opc == "2":
-        # Eliminar carro
-        while True:
-            carro = input(INGRESA_CARRO_ELIMINAR).strip().lower()
-            if carro != "":
-                if carro in carros:
-                    carros.remove(carro)
+    while True:
+        print(ACCIONES)
+        opc = input("Dime que opcion deseas realizar: ").strip()
+        
+        if opc == "1":
+            # Agregar carro
+            while True:
+                carro = input(INGRESA_CARRO_AGREGAR).strip().lower()
+                if carro != "":
+                    carros.append(carro)
                     print(ACTUALIZACION_EXITOSA)
                     for carro in carros:
-                        print(carro.title())
+                            print(carro.title())
                     break
                 else:
-                    print("El carro no se encuentra en el inventario.")
-                    break
-            else:
-                print(ENTRADA_INVALIDA)
-    elif opc == "3":
-        carros.sort()
-        print(ACTUALIZACION_EXITOSA)
-        for carro in carros:
-            print(carro.title())
-    elif opc == "4":
-        # Salir del programa
-        print(DESPEDIDA)
-        break
-    else:
-        print(ENTRADA_INVALIDA)
+                    print(ENTRADA_INVALIDA)
+        elif opc == "2":
+            # Eliminar carro
+            while True:
+                carro = input(INGRESA_CARRO_ELIMINAR).strip().lower()
+                if carro != "":
+                    if carro in carros:
+                        carros.remove(carro)
+                        print(ACTUALIZACION_EXITOSA)
+                        for carro in carros:
+                            print(carro.title())
+                        break
+                    else:
+                        print("El carro no se encuentra en el inventario.")
+                        break
+                else:
+                    print(ENTRADA_INVALIDA)
+        elif opc == "3":
+            # Ordenar inventario
+            carros.sort()
+            print(ACTUALIZACION_EXITOSA)
+            for carro in carros:
+                print(carro.title())
+        elif opc == "4":
+            # Salir del programa
+            print(DESPEDIDA)
+            break
+        else:
+            print(ENTRADA_INVALIDA)
+
+# Solo ejecuta la función si este archivo es el principal
+if __name__ == "__main__":
+    iniciar_taller()
