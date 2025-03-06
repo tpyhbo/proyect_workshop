@@ -1,32 +1,32 @@
 BIENVENIDA = """
-Bienvenido al taller de Don Jose.
+Bienvenido al taller de Don José.
 Este programa gestiona el inventario de carros.
 """
 
-INVENTARIO = "Este es el inventario de carros inicial:"
+INVENTARIO = "Este es el inventario actual de carros:"
 ACCIONES = """
 Acciones:
-1) Agregar carro
-2) Eliminar carro
-3) Ordenar inventario
+1) Agregar un carro
+2) Eliminar un carro
+3) Ordenar el inventario
 4) Salir
 """
 
 INGRESA_CARRO_AGREGAR = """
-Ingresa el nombre del carro que deseas agregar:"""
+Ingresa el modelo del carro que deseas agregar: """
 INGRESA_CARRO_ELIMINAR = """
-Ingresa el nombre del carro que deseas eliminar:"""
+Ingresa el modelo del carro que deseas eliminar: """
 ACTUALIZACION_EXITOSA = """
 Inventario actualizado:"""
 ENTRADA_INVALIDA = """
-Entrada invalida."""
+Entrada inválida."""
 DESPEDIDA = """
 Gracias por usar este programa.
 Este programa fue pythonizado por ChuyPeñaCP.
-Adios."""
+Adiós."""
 
 # Inventario inicial
-carros = ["nissan", "toyota", "honda", "volkswagen", "chevrolet", "ford"]
+carros = ["sentra", "corolla", "civic", "jetta", "aveo", "mustang"]
 
 # Función principal del programa
 def iniciar_taller():
@@ -38,7 +38,7 @@ def iniciar_taller():
 
     while True:
         print(ACCIONES)
-        opc = input("Dime que opcion deseas realizar: ").strip()
+        opc = input("Dime qué opción deseas realizar: ").strip()
         
         if opc == "1":
             # Agregar carro
@@ -48,7 +48,7 @@ def iniciar_taller():
                     carros.append(carro)
                     print(ACTUALIZACION_EXITOSA)
                     for carro in carros:
-                            print(carro.title())
+                        print(carro.title())
                     break
                 else:
                     print(ENTRADA_INVALIDA)
@@ -64,8 +64,7 @@ def iniciar_taller():
                             print(carro.title())
                         break
                     else:
-                        print("El carro no se encuentra en el inventario.")
-                        break
+                        print("El modelo ingresado no está en el inventario.")
                 else:
                     print(ENTRADA_INVALIDA)
         elif opc == "3":
